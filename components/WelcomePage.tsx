@@ -39,7 +39,7 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({ onStart }) => {
           onClick={onStart}
           className="group relative px-12 py-5 bg-[--color-accent-primary] text-white font-black rounded-2xl shadow-[0_10px_40px_-10px_var(--color-accent-primary)] hover:shadow-[0_20px_60px_-10px_var(--color-accent-primary)] focus:outline-none transition-all transform hover:scale-105 active:scale-95 uppercase tracking-widest text-lg"
         >
-          Initialize Workspace
+          Start Analysis
           <div className="absolute inset-0 rounded-2xl border-2 border-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
         </button>
       </div>
