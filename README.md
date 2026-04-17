@@ -1,20 +1,15 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# DIC50 Well Analyzer
 
-# Run and deploy your AI Studio app
+A web-based tool for analyzing well plate data and calculating DIC50 values.
 
-This contains everything you need to run your app locally.
+## Features
+- Image upload and processing
+- Automated well plate analysis
+- Result visualization
 
-View your app in AI Studio: https://ai.studio/apps/ec27f5e1-204c-4214-9137-38ac7bfb8714
+## Tech Stack
+- React (Vite)
+- TypeScript
 
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Usage
+Upload an image and follow the steps to analyze results.
