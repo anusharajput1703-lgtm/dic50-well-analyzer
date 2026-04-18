@@ -51,6 +51,9 @@ export const InitialChoicePage: React.FC<InitialChoicePageProps> = ({ onSelectAI
           </div>
         </button>
       </div>
+      <p style={{ marginTop: "20px", color: "gray", textAlign: "center" }}>
+  Developed by Anusha Rani & Sowmya Keerthi
+</p>
     </div>
   );
 };

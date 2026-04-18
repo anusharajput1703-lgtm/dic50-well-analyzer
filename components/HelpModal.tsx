@@ -20,15 +20,16 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
             onClick={onClose}
             className="fixed inset-0 bg-black/50 z-[100] backdrop-blur-sm"
           />
-          
-          {/* Modal Container */}
+
+          {/* Modal */}
           <div className="fixed inset-0 flex items-center justify-center z-[101] pointer-events-none p-4">
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="bg-[--color-background-secondary] w-full max-w-2xl rounded-2xl shadow-2xl pointer-events-auto overflow-hidden flex flex-col max-h-[90vh]"
+              className="bg-[--color-background-secondary] w-full max-w-4xl rounded-2xl shadow-2xl pointer-events-auto overflow-hidden flex flex-col max-h-[90vh]"
             >
+
               {/* Header */}
               <div className="flex justify-between items-center p-6 border-b border-[--color-border-secondary]">
                 <div className="flex items-center gap-3">
@@ -39,70 +40,68 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
                     <h2 className="text-xl font-black uppercase tracking-tight text-[--color-text-primary]">
                       Help & Tutorial
                     </h2>
-                    <p className="text-[10px] uppercase tracking-widest font-bold text-[--color-text-muted]">
-                      Getting started guide
+                    <p className="text-xs uppercase tracking-widest font-bold text-[--color-text-muted]">
+                      How to use the analyzer
                     </p>
                   </div>
                 </div>
+
                 <button
                   onClick={onClose}
                   className="p-2 text-[--color-text-muted] hover:text-[--color-text-primary] hover:bg-[--color-background-tertiary] rounded-xl transition-all"
-                  aria-label="Close help"
                 >
                   <XIcon className="w-6 h-6" />
                 </button>
               </div>
 
               {/* Content */}
-              <div className="p-6 overflow-y-auto custom-scrollbar">
-                {/* Video Player Section */}
-                <div className="space-y-4">
+              <div className="p-6 overflow-y-auto custom-scrollbar space-y-8">
+
+                {/* 🎥 VIDEO */}
+                <div>
                   <div className="relative aspect-video w-full bg-black rounded-xl overflow-hidden shadow-lg">
                     <iframe
-                      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                      title="Tutorial Video Placeholder"
+                      src="https://www.youtube.com/embed/qu5QfjivY2w"
+                      title="dIC50 Tutorial"
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                       className="absolute inset-0 w-full h-full"
-                    ></iframe>
+                    />
                   </div>
-                  <p className="text-center text-xs font-medium text-[--color-text-muted] italic">
-                    (Tutorial video placeholder - will be updated before launch)
+
+                  <p className="text-center text-sm text-[--color-text-muted] mt-2">
+                    Watch this video to understand how to use the analyzer.
                   </p>
                 </div>
 
-                {/* PDF Download Section */}
-                <div className="mt-8 pt-8 border-t border-[--color-border-secondary]">
-                  <div className="bg-[--color-background-tertiary] p-6 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-6 hover:bg-[--color-background-tertiary-hover] transition-colors group">
-                    <div className="text-center sm:text-left">
-                      <h3 className="font-black uppercase tracking-tight text-[--color-text-primary]">
-                        User Manual
-                      </h3>
-                      <p className="text-xs text-[--color-text-muted] mt-1">
-                        Detailed instructions for image analysis and results interpretation.
-                      </p>
-                    </div>
-                    <a
-                      href="/dic50-user-guide.pdf"
-                      download
-                      className="flex items-center gap-3 px-6 py-3 bg-[--color-accent-primary] text-[--color-accent-primary-text] rounded-xl font-bold uppercase tracking-widest text-xs shadow-lg hover:bg-[--color-accent-primary-hover] hover:shadow-xl transition-all active:scale-95 whitespace-nowrap"
-                    >
-                      <DownloadIcon className="w-4 h-4" />
-                      Download User Guide (PDF)
-                    </a>
+                {/* 📄 PDF VIEW */}
+                <div>
+                  <h3 className="font-black uppercase text-[--color-text-primary] mb-3">
+                    User Guide (Preview)
+                  </h3>
+
+                  <div className="w-full h-[70vh] border rounded-xl overflow-hidden">
+                    <iframe
+                      src="/manual.pdf"
+                      className="w-full h-full"
+                      title="User Guide PDF"
+                    />
                   </div>
                 </div>
-              </div>
 
-              {/* Footer */}
-              <div className="p-6 bg-[--color-background-tertiary] border-t border-[--color-border-secondary] flex justify-center">
-                <button
-                  onClick={onClose}
-                  className="px-8 py-2 text-xs font-black uppercase tracking-widest text-[--color-text-muted] hover:text-[--color-text-primary] transition-colors"
-                >
-                  Close Help
-                </button>
+                {/* 📥 DOWNLOAD BUTTON */}
+                <div className="flex justify-center">
+                  <a
+                    href="/manual.pdf"
+                    download
+                    className="flex items-center gap-2 px-6 py-3 bg-[--color-accent-primary] text-white rounded-xl font-bold hover:scale-105 transition"
+                  >
+                    <DownloadIcon className="w-5 h-5" />
+                    Download PDF
+                  </a>
+                </div>
+
               </div>
             </motion.div>
           </div>
