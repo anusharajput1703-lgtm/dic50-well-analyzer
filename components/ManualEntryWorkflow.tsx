@@ -16,7 +16,7 @@ interface ManualRow {
 }
 
 export const ManualEntryWorkflow: React.FC<ManualEntryWorkflowProps> = ({ onComplete, onCancel }) => {
-    const [name, setName] = useState('Manual Analysis');
+    const [name, setName] = useState('');
     const [units, setUnits] = useState('nM');
     const [rows, setRows] = useState<ManualRow[]>([
         { id: 0, concentration: '', replicates: ['', '', ''] }

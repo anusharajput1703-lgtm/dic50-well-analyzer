@@ -13,7 +13,7 @@ export const MethodInstructions: React.FC<MethodInstructionsProps> = ({ method, 
       steps: [
         {
           title: 'IMAGE CAPTURE',
-          description: 'Prepare a standard 96-well plate photograph with minimal skew, minimal glare, and even lighting on a flat white surface.',
+          description: 'Prepare a standard 96-well plate photographs with minimal skew, minimal glare, and even lighting on a flat white surface.',
         },
         {
           title: 'PLATE UPLOAD',
@@ -21,15 +21,15 @@ export const MethodInstructions: React.FC<MethodInstructionsProps> = ({ method, 
         },
         {
           title: 'GRID CALIBRATION',
-          description: 'Use interactive anchoring: Place and drag grid points into the exact centers of wells A1 (top-left), A12 (top-right), and H1 (bottom-left).',
+          description: 'Select corner wells such as A1, A12, and H1 (or equivalent edge wells where the drug is present) to scale and position the grid correctly. Ensure all circles align accurately with the center of each well across the plate.',
         },
         {
           title: 'PARAMETER LOCK',
           description: 'Specify inhibitor compound, concentration units, and list all your tested concentration levels to activate the analysis engine.',
         },
         {
-          title: 'WELL ASSIGNMENT',
-          description: 'Use direct well selection on the image to map controls (0%, 100% viability) and well replicates for each concentration.',
+          title: 'CONTROL PREPARATION',
+          description: 'Reserve Untreated Control wells (cells without drug, 100% viability) and Blank Control wells (media + dye only, no cells, 0% viability) during plate preparation for accurate IC50 analysis.',
         },
       ],
       buttonText: 'Proceed to Upload Image →',

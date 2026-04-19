@@ -81,7 +81,7 @@ export const PlateAnalyzer = forwardRef<PlateAnalyzerRef, PlateAnalyzerProps>(({
   // Simplified to single inhibitor
   const [inhibitor, setInhibitor] = useState<InhibitorSetup>({
     id: 0,
-    name: 'Inhibitor 1',
+    name: 'Inhibitor',
     concentrationUnits: 'nM',
     concentrations: [],
   });
@@ -770,7 +770,7 @@ export const PlateAnalyzer = forwardRef<PlateAnalyzerRef, PlateAnalyzerProps>(({
                         <>
                         <div className={`p-2.5 rounded-lg border-2 flex justify-between items-center transition-all ${activeAssignmentKey === posKey ? 'border-green-500 bg-green-500/5 shadow-inner' : 'border-transparent bg-[--color-background-tertiary]'}`}>
                             <div>
-                                <div className="text-xs font-bold text-green-600 dark:text-green-400">Max = 100%</div>
+                                <div className="text-xs font-bold text-green-600 dark:text-green-400"> Untreated Control</div>
                                 <div className="text-[10px] text-[--color-text-muted]">
                                     {(wellAssignments.get(posKey)?.length || 0) === 0 ? 'Assign minimum 3 wells' : `${wellAssignments.get(posKey)?.length} wells assigned`}
                                 </div>
@@ -780,7 +780,7 @@ export const PlateAnalyzer = forwardRef<PlateAnalyzerRef, PlateAnalyzerProps>(({
 
                         <div className={`p-2.5 rounded-lg border-2 flex justify-between items-center transition-all ${activeAssignmentKey === negKey ? 'border-red-500 bg-red-500/5 shadow-inner' : 'border-transparent bg-[--color-background-tertiary]'}`}>
                             <div>
-                                <div className="text-xs font-bold text-red-600 dark:text-red-400">Min = 0%</div>
+                                <div className="text-xs font-bold text-red-600 dark:text-red-400">Blank Control </div>
                                 <div className="text-[10px] text-[--color-text-muted]">
                                     {(wellAssignments.get(negKey)?.length || 0) === 0 ? 'Assign minimum 3 wells' : `${wellAssignments.get(negKey)?.length} wells assigned`}
                                 </div>
