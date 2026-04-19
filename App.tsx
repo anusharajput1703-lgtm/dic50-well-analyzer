@@ -65,6 +65,7 @@ function App() {
 
   const handleManualComplete = (data: InhibitorData[]) => {
     setInhibitors(data);
+    setProcessedImageUrl(''); // important
     setAppState('results');
   };
 
@@ -115,12 +116,20 @@ function App() {
     setGridConfig(null);
   };
 
+  // ✅ FIXED BACK LOGIC
   const handleBack = () => {
     if (appState === 'choice') setAppState('welcome');
     else if (appState === 'instructions') setAppState('choice');
     else if (appState === 'uploading' || appState === 'manual-entry') setAppState('choice');
     else if (appState === 'analyzing') setAppState('uploading');
-    else if (appState === 'results') setAppState('choice');
+
+    else if (appState === 'results') {
+      if (processedImageUrl) {
+        setAppState('analyzing'); // ✅ correct
+      } else {
+        setAppState('manual-entry'); // ✅ correct
+      }
+    }
   };
 
   const renderContent = () => (
@@ -188,11 +197,9 @@ function App() {
   return (
     <div className="min-h-screen bg-[--color-background-primary] text-[--color-text-primary]">
 
-      {/* HEADER */}
       <header className="bg-[--color-background-secondary] shadow-md sticky top-0 z-30">
         <div className="max-w-7xl mx-auto py-4 px-4 flex justify-between items-center">
 
-          {/* LEFT */}
           <div className="flex items-center gap-3">
 
             {appState !== 'welcome' && (
@@ -211,7 +218,6 @@ function App() {
             </h1>
           </div>
 
-          {/* RIGHT */}
           <div className="flex items-center gap-2">
 
             <button
