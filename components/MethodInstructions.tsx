@@ -16,7 +16,7 @@ export const MethodInstructions: React.FC<MethodInstructionsProps> = ({ method, 
           description: 'Reserve Untreated Control wells (cells without drug, 100% viability) and Blank Control wells (media + dye only, no cells, 0% viability) during plate preparation for accurate IC50 analysis.',
         },
         {
-          title: 'IMAGE CAPTUR',
+          title: 'IMAGE CAPTURE',
           description: 'Prepare a standard 96-well plate photographs with minimal skew, minimal glare, and even lighting on a flat white surface.',
         },
         {
