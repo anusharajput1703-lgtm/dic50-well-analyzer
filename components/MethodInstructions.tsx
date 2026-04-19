@@ -12,7 +12,11 @@ export const MethodInstructions: React.FC<MethodInstructionsProps> = ({ method, 
       title: 'Image Analysis Guidelines',
       steps: [
         {
-          title: 'IMAGE CAPTURE',
+          title: 'CONTROL PREPARATION',
+          description: 'Reserve Untreated Control wells (cells without drug, 100% viability) and Blank Control wells (media + dye only, no cells, 0% viability) during plate preparation for accurate IC50 analysis.',
+        },
+        {
+          title: 'IMAGE CAPTUR',
           description: 'Prepare a standard 96-well plate photographs with minimal skew, minimal glare, and even lighting on a flat white surface.',
         },
         {
@@ -21,15 +25,11 @@ export const MethodInstructions: React.FC<MethodInstructionsProps> = ({ method, 
         },
         {
           title: 'GRID CALIBRATION',
-          description: 'Select corner wells such as A1, A12, and H1 (or equivalent edge wells where the drug is present) to scale and position the grid correctly. Ensure all circles align accurately with the center of each well across the plate.',
+          description: 'Select corner wells such as A1, A12, and H1 (or equivalent edge wells where the drug is present) to scale and position the grid correctly. Ensure all circles align accurately with the center of each well across the plate..',
         },
         {
           title: 'PARAMETER LOCK',
           description: 'Specify inhibitor compound, concentration units, and list all your tested concentration levels to activate the analysis engine.',
-        },
-        {
-          title: 'CONTROL PREPARATION',
-          description: 'Reserve Untreated Control wells (cells without drug, 100% viability) and Blank Control wells (media + dye only, no cells, 0% viability) during plate preparation for accurate IC50 analysis.',
         },
       ],
       buttonText: 'Proceed to Upload Image →',
