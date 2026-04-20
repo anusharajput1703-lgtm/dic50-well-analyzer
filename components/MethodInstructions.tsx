@@ -13,11 +13,11 @@ export const MethodInstructions: React.FC<MethodInstructionsProps> = ({ method, 
       steps: [
         {
           title: 'CONTROL PREPARATION',
-          description: 'Reserve Untreated Control wells (cells without drug, 100% viability) and Blank Control wells (media + dye only, no cells, 0% viability) during plate preparation for accurate IC50 analysis.',
+          description: 'Reserve Untreated Control wells (cells without drug, 100% viability) and Blank wells (media + dye only, no cells, 0% viability) during plate preparation for accurate IC50 analysis.',
         },
         {
           title: 'IMAGE CAPTURE',
-          description: 'Prepare a standard 96-well plate photographs with minimal skew, minimal glare, and even lighting on a flat white surface.',
+          description: 'Take a clear photo of the 96-well plate with good lighting, less glare, and place it on a flat white surface.',
         },
         {
           title: 'PLATE UPLOAD',
@@ -29,7 +29,7 @@ export const MethodInstructions: React.FC<MethodInstructionsProps> = ({ method, 
         },
         {
           title: 'PARAMETER LOCK',
-          description: 'Specify inhibitor compound, concentration units, and list all your tested concentration levels to activate the analysis engine.',
+          description: 'Specify inhibitor compound, concentration units, and list all your tested concentration levels to activate the analysis.',
         },
       ],
       buttonText: 'Proceed to Upload Image →',
@@ -39,11 +39,11 @@ export const MethodInstructions: React.FC<MethodInstructionsProps> = ({ method, 
       steps: [
         {
           title: 'DATA PREPARATION',
-          description: 'Gather your pre-calculated experimental concentration values and corresponding cell viability percentages from your lab records.',
+          description: 'Gather your pre-calculated experimental concentration values and corresponding cell viability percentages.',
         },
         {
           title: 'PARAMETER SETUP',
-          description: 'Specify your inhibitor compound names and select the appropriate concentration units (e.g., µM, nM) to initialize the workspace.',
+          description: 'Specify your inhibitor compound names and select the appropriate concentration units (e.g., µM, nM).',
         },
         {
           title: 'DATA ENTRY',
@@ -55,7 +55,7 @@ export const MethodInstructions: React.FC<MethodInstructionsProps> = ({ method, 
         },
         {
           title: 'REVIEW & EXPORT',
-          description: 'Verify your data integrity on the interactive graph and export the detailed analytical report for your records.',
+          description: 'Verify your data integrity on the interactive graph and export the detailed analytical report.',
         },
       ],
       buttonText: 'Proceed to Data Entry →',

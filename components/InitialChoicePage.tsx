@@ -44,7 +44,7 @@ export const InitialChoicePage: React.FC<InitialChoicePageProps> = ({ onSelectAI
           </div>
           <h3 className="text-2xl font-bold text-[--color-text-primary] mb-3">Manual IC₅₀ Entry</h3>
           <p className="text-[--color-text-muted] leading-relaxed">
-            Bypass image processing. Manually enter your measured concentrations and viability percentages to generate a dose-response curve.
+             Manually enter your measured concentrations and viability percentages to generate a dose-response curve.
           </p>
           <div className="mt-8 px-6 py-2 bg-emerald-600 text-white rounded-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
             Enter Data
