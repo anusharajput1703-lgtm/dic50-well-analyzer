@@ -45,6 +45,7 @@ export const PlateAnalyzer = forwardRef<PlateAnalyzerRef, PlateAnalyzerProps>(({
   const [cropRect, setCropRect] = useState<{ start: Point; end: Point } | null>(null);
   const [isRotating, setIsRotating] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
+  const [zoom, setZoom] = useState(1);
   
   // All points are now stored as relative coordinates (0-1)
   const [topLeftPoint, setTopLeftPoint] = useState<Point | null>(null);
@@ -100,6 +101,9 @@ export const PlateAnalyzer = forwardRef<PlateAnalyzerRef, PlateAnalyzerProps>(({
   const animationFrameRef = useRef<number | null>(null);
   const lastMoveEventRef = useRef<React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement> | null>(null);
 
+const zoomMin = 1;
+const zoomMax = 4;
+const zoomStep = 0.5;
   const [imageRenderInfo, setImageRenderInfo] = useState<{ width: number; height: number; x: number; y: number } | null>(null);
 
   const displayImageUrl = useMemo(() => croppedImageUrl || rotatedImageUrl || originalImageUrl, [croppedImageUrl, rotatedImageUrl, originalImageUrl]);
@@ -391,7 +395,7 @@ export const PlateAnalyzer = forwardRef<PlateAnalyzerRef, PlateAnalyzerProps>(({
 
   const onDragStart = (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
     if (isDragging) return;
-    if ('touches' in e) e.stopPropagation();
+    if ('touches' in e) { e.stopPropagation(); e.preventDefault(); }
     const point = getPointFromEvent(e);
     if (!point) return;
 
@@ -580,17 +584,15 @@ export const PlateAnalyzer = forwardRef<PlateAnalyzerRef, PlateAnalyzerProps>(({
         <div className="w-full p-2 mb-2 text-center bg-[--color-background-tertiary] rounded-lg">
             <div className="text-sm font-semibold">{renderCurrentStep()}</div>
         </div>
-        <div className="w-full relative">
+        <div className="w-full relative overflow-auto">
           <div
             ref={containerRef}
-            className="relative inline-block cursor-crosshair"
-            onMouseDown={onDragStart}
-            onMouseMove={onDragMove}
-            onMouseUp={onDragEnd}
-            onMouseLeave={onMouseLeave}
-            onTouchStart={onDragStart}
-            onTouchMove={onDragMove}
-            onTouchEnd={onDragEnd}
+className="relative inline-block cursor-crosshair"
+style={{ transform: `scale(${zoom})`, transformOrigin: 'top left', transition: 'transform 0.2s' }}
+            onPointerDown={onDragStart}
+            onPointerMove={onDragMove}
+            onPointerUp={onDragEnd}
+            onPointerLeave={onMouseLeave}
           >
             {displayImageUrl ? (
               <img

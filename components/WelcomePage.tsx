@@ -43,6 +43,9 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({ onStart }) => {
           <div className="absolute inset-0 rounded-2xl border-2 border-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
         </button>
       </div>
+      <p className="mt-10 text-sm text-gray-500">
+  Developed by Anusha Rani & Sowmya keerthi
+</p>
     </div>
   );
 };

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">DIC50 Well Analyser</string>
+    <string name="title_activity_main">DIC50 Well Analyser</string>
+    <string name="package_name">com.anusha.dic50analyser</string>
+    <string name="custom_url_scheme">com.anusha.dic50analyser</string>
+</resources>
